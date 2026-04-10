@@ -4,34 +4,34 @@ APP PLANNING & DESIGN
 
 1. PROJECT IDEA
 -------------------------
-- What is your app called?
-- What type of app is it? (journal, listings, notes, etc.)
-- What will users use your app for?
+- What is your app called?  Notey
+- What type of app is it? (journal, listings, notes, etc.)  Notes
+- What will users use your app for?   Do notes or just type whatever they want
 
 2. DATA MODEL (WHAT ARE YOU STORING?)
 -------------------------
-- What is a single “entry” in your app?
-- What fields will each entry have? (title, content, date, etc.)
-- How will entries be connected to a user?
+- What is a single “entry” in your app?   The lines
+- What fields will each entry have? (title, content, date, etc.) Content
+- How will entries be connected to a user? When they type they will see what they type
 
 3. CORE FEATURES (CRUD)
 -------------------------
-- What can users CREATE?
-- What will they see on the main page (READ)?
-- What can users EDIT (UPDATE)?
-- What can users DELETE?
+- What can users CREATE?  Just letters and number and words
+- What will they see on the main page (READ)?  Start typing
+- What can users EDIT (UPDATE)?   They can add letters and number
+- What can users DELETE?  Letters and number
 
 4. USER FLOW
 -------------------------
-- What happens after a user logs in?
-- What pages/routes will your app need? (dashboard, create, edit, etc.)
-- Describe a typical user experience from login → using your app
+- What happens after a user logs in? They will see a blank page
+- What pages/routes will your app need? (dashboard, create, edit, etc.)  Create
+- Describe a typical user experience from login → using your app  It will feel simple
 
 5. USER EXPERIENCE (UX)
 -------------------------
-- How should your app look and feel?
-- How will users navigate between pages?
-- How will entries be displayed (list, cards, etc.)?
+- How should your app look and feel?   Simple and easy
+- How will users navigate between pages? They won't
+- How will entries be displayed (list, cards, etc.)? When they type it wil show
 
 6. OPTIONAL FEATURES
 -------------------------
