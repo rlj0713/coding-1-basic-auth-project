@@ -77,16 +77,15 @@ def register():
 
 @app.route("/dashboard")
 def secret():
+    conn = get_db()
     if "user" not in session:
         return redirect(url_for("login"))
-        conn = get_db()
     entries = conn.execute(
    "SELECT * FROM entries WHERE user=?",
     (session["user"],)
-     ).fetchall()
-        conn.close()
+    ).fetchall()
+    conn.close()
     return render_template("dashboard.html", entries=entries, username=session["user"])
-    return render_template("secret.html", username=session["user"])
 
 
 # ---------- CREATE ----------

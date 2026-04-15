@@ -14,5 +14,14 @@ def init_db():
             password TEXT
         )
     """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS user (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user TEXT,
+            title TEXT,
+            content TEXT,
+            FOREIGN KEY (user) REFERENCES users(username)
+        )
+    """)
     conn.commit()
     conn.close()
