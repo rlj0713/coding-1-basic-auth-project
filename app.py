@@ -81,8 +81,8 @@ def secret():
     if "user" not in session:
         return redirect(url_for("login"))
     entries = conn.execute(
-   "SELECT * FROM entries WHERE user=?",
-    (session["user"],)
+        "SELECT * FROM entries WHERE user=?",
+        (session["user"],)
     ).fetchall()
     conn.close()
     return render_template("dashboard.html", entries=entries, username=session["user"])
