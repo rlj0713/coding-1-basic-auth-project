@@ -17,11 +17,21 @@ def init_db():
     conn.execute("""
         CREATE TABLE IF NOT EXISTS entries (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user Bryce,
+            title Notes,
+            content Journal,
+            FOREIGN KEY (user) REFERENCES users(username)
+        )
+    """)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS entries (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             user TEXT,
             title TEXT,
             content TEXT,
             FOREIGN KEY (user) REFERENCES users(username)
         )
     """)
+
     conn.commit()
     conn.close()
