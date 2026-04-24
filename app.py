@@ -80,7 +80,7 @@ def dashboard():
     conn = get_db()
     if "user" not in session:
         return redirect(url_for("login"))
-            entries = conn.execute(
+        entries = conn.execute(
             "SELECT * FROM entries WHERE user=?",
             (session["user"],)
         ).fetchall()
