@@ -7,10 +7,10 @@ body {
     height: 100vh;
 }
 .card {
-    background: rgb(41, 38, 38);
+    background: #fffdfd;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(51, 49, 49, 0.1);
+    box-shadow: 0 4px 10px rgb(235, 231, 231);
     width: 300px;
     text-align: center;
 }
@@ -32,7 +32,7 @@ button {
 .link {
     display: inline-block;
     margin-top: 15px;
-    color: #dddddd;
+    color: #15fd00;
     text-decoration: none;
 }
 .link:hover {
