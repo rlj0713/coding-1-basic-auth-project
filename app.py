@@ -6,14 +6,9 @@ from flask import Flask, request, redirect, url_for, render_template, session
 from database import get_db, init_db
 import bcrypt
 import re
-from werkzeug.utils import secure_filename
-import os
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
-
-UPLOAD_FOLDER = os.path.join(app.root_path, "static", "uploads")
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 init_db()
 
@@ -94,7 +89,22 @@ def dashboard():
     return render_template("dashboard.html", entries=entries, username=session["user"])
 
 
-# ---------- CREATE ----------
+@app.route("/image/<int:id>")
+def get_image(id):
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    conn = get_db()
+    entry = conn.execute(
+        "SELECT image FROM entries WHERE id=? AND user=?",
+        (id, session["user"])
+    ).fetchone()
+    conn.close()
+
+    if entry and entry["image"]:
+        return entry["image"], 200, {'Content-Type': 'image/jpeg'}
+    else:
+        return "Image not found", 404
 @app.route("/create", methods=["GET", "POST"])
 def create():
     if "user" not in session:
@@ -105,16 +115,15 @@ def create():
         content = request.form["content"].strip()
         file = request.files.get('image_file')
     
-        filename = None
+        image_data = None
 
         if file and file.filename:
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(UPLOAD_FOLDER, filename))
+            image_data = file.read()
 
         conn = get_db()
         conn.execute(
             "INSERT INTO entries (user, title, content, image) VALUES (?, ?, ?, ?)",
-            (session["user"], title, content, filename)
+            (session["user"], title, content, image_data)
         )
 
         conn.commit()

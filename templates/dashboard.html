@@ -11,6 +11,8 @@
 <!-- TODO: Add a button or link to create a new entry -->
 <a href="/create" class="link">Create New Entry</a>
 
+<a href="/logout" ><button>Logout</button></a>
+
 <br><br>
 
 {% for entry in entries %}
@@ -18,7 +20,7 @@
         <h3>{{ entry['title'] }}</h3>
         <p>{{ entry['content'] }}</p>
             {% if entry['image'] %}
-                <img src="{{ url_for('static', filename='uploads/' ~ entry['image']) }}" alt="Entry Image" style="max-width: 200px; max-height: 200px;">
+                <img src="{{ url_for('get_image', id=entry['id']) }}" alt="Entry Image" style="max-width: 200px; max-height: 200px;">
             {% endif %}
 
         <a href="/edit/{{ entry['id'] }}" class="link">Edit</a>
