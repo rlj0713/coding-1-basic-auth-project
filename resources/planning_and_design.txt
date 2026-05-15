@@ -6,33 +6,33 @@ APP PLANNING & DESIGN
 -------------------------
 - What is your app called?  Notey
 - What type of app is it? (journal, listings, notes, etc.)  Journal/Notes app
-- What will users use your app for?   THey can make entrys for work,journal, or important things
+- What will users use your app for? They can make entries for work, journal, or important things
 
 2. DATA MODEL (WHAT ARE YOU STORING?)
 -------------------------
-- What is a single “entry” in your app?   The lines
+- What is a single “entry” in your app? A title, content, and optional file.
 - What fields will each entry have? (title, content, date, etc.) Content, title, and images
 - How will entries be connected to a user? When they type or add images they will able to see what they put
 
 3. CORE FEATURES (CRUD)
 -------------------------
 - What can users CREATE?  Words and images
-- What will they see on the main page (READ)?  A displayed of the tile, content, and add images
+- What will they see on the main page (READ)?  A display of the tile, content, and images
 - What can users EDIT (UPDATE)?   Content and title
 - What can users DELETE?  The whole entry
 
 4. USER FLOW
 -------------------------
-- What happens after a user logs in? They will see their username and create entry
-- What pages/routes will your app need? (dashboard, create, edit, etc.)  All of them
-- Describe a typical user experience from login → using your app  It will feel simple and not complex
+- What happens after a user logs in? They will see their username and a "create entry" link
+- What pages/routes will your app need? (dashboard, create, edit, etc.)  dashboard, create, edit, delete, register, logout
+- Describe a typical user experience from login → They will be routed to a dashbaord. If they hasve entries they will see them. If they don't they will have the option to create them. If they have entries they can edit and delete them. They can logout at any point.
 
 5. USER EXPERIENCE (UX)
 -------------------------
-- How should your app look and feel?   Simple and easy
-- How will users navigate between pages? it will just be a whole list so they can scroll down
-- How will entries be displayed (list, cards, etc.)? cards
+- How should your app look and feel? it should look like a modern note taking app. It should be simple, responsive, and should look fairly ok.
+- How will users navigate between pages? There will be buttons/links that they can click and it will transport them to new pages.
+- How will entries be displayed (list, cards, etc.)? They will be displayed on a large central card in a list of newest to oldest. 
 
 6. OPTIONAL FEATURES
 -------------------------
-- What extra features might you add? (search, tags, sorting, etc.)
+- What extra features might you add? (search, tags, sorting, etc.) We added image upload capabilities. We also added sorting so the entries show up from newest to oldest. We also improved the css by changing colors, rounding corners, and adding hover effects.
