@@ -10,7 +10,7 @@
     <input type="text" id="title" name="title" value="{{ entry['title'] }}" required>
 
     <label for="content">Content:</label>
-    <textarea id="content" name="content" required>{{ entry['content'] }}</textarea>
+    <input id="content" name="content" required value="{{ entry['content'] }}">
 
     <button type="submit">Update Entry</button>
 
